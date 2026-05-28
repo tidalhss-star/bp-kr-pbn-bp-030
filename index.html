@@ -1,213 +1,591 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>비주류 문화 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    
+    <title>부산 쇼핑몰 제작 마케팅 - 겁먹지 말고 팔자 | kr-neon-void</title>
+    <meta name="description" content="부산 쇼핑몰 제작 마케팅, 어렵게 생각하지 마라. 우리는 화려한 UI 보다 확실한 매출 시스템을 만든다. 부산 기반의 도메스틱한 개발자, 내 스토어를 비스트 모드로 바꿔본다.">
+    <meta name="keywords" content="부산 쇼핑몰 제작, 부산 쇼핑몰 마케팅, 깔롱 마케팅, 네이버 스마트스토어 구축, 부산 웹개발, 쇼핑몰 디자인">
+    <link rel="canonical" href="https://kr-pbn-bp-030.pages.dev/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-bp-030.pages.dev/">
+    <meta property="og:title" content="부산 쇼핑몰 제작 마케팅 - 겁먹지 말고 팔자">
+    <meta property="og:description" content="부산 기반의 도메스틱한 개발자. 화려한 UI 보다 확실한 매출 시스템.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='100%25' height='100%25' fill='%23000000'/%3E%3Crect x='50' y='50' width='1100' height='530' fill='none' stroke='%23ff3b00' stroke-width='10'/%3E%3Ctext x='600' y='350' font-family='Impact, sans-serif' font-size='100' fill='%23ff3b00' text-anchor='middle' dominant-baseline='middle'%3EBUSAN COMMERCE%3C/text%3E%3C/svg%3E">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kr-pbn-bp-030.pages.dev/">
+    <meta property="twitter:title" content="부산 쇼핑몰 제작 마케팅 - 겁먹지 말고 팔자">
+    <meta property="twitter:description" content="부산 기반의 도메스틱한 개발자. 화려한 UI 보다 확실한 매출 시스템.">
+    <meta property="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='100%25' height='100%25' fill='%23000000'/%3E%3Crect x='50' y='50' width='1100' height='530' fill='none' stroke='%23ff3b00' stroke-width='10'/%3E%3Ctext x='600' y='350' font-family='Impact, sans-serif' font-size='100' fill='%23ff3b00' text-anchor='middle' dominant-baseline='middle'%3EBUSAN COMMERCE%3C/text%3E%3C/svg%3E">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "부산 쇼핑몰 제작 마케팅 (kr-neon-void)",
+      "image": "https://kr-pbn-bp-030.pages.dev/og-image.jpg",
+      "telephone": "010-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "부산광역시",
+        "addressCountry": "KR"
+      },
+      "priceRange": "$$",
+      "description": "부산 지역의 쇼핑몰 제작 및 마케팅 대행 전문 서비스. 스트리트 브루탈리즘 디자인 컨셉의 고효율 전환頁面 구축.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* --- RESET & BASE --- */
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #ff3b00; /* Neon Void Orange */
+            --bg-paper: #f4f4f0;
+            --border-width: 4px;
+            --space-unit: 8px;
+            --font-main: 'Impact', 'Haettenschweiler', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            --font-body: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-paper);
+            color: var(--primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 18px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-main);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 0.9;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            word-break: keep-all;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            max-width: 70ch;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            width: 100%;
+            padding: 0 2rem;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1.5rem 3rem;
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            border: var(--border-width) solid var(--primary);
+            box-shadow: 8px 8px 0px var(--primary);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--primary);
+            background: var(--secondary);
+        }
+
+        .btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--primary);
+        }
+
+        .text-accent { color: var(--accent); }
+        .bg-accent { background-color: var(--accent); color: var(--secondary); }
+        .bg-primary { background-color: var(--primary); color: var(--secondary); }
+
+        /* --- HEADER --- */
+        header {
+            border-bottom: var(--border-width) solid var(--primary);
+            position: sticky;
+            top: 0;
+            background: var(--bg-paper);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-main);
+            font-size: 2rem;
+            border: 2px solid var(--primary);
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            transform: rotate(-2deg);
+        }
+
+        .desktop-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .desktop-menu a {
+            font-family: var(--font-main);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .desktop-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .desktop-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 8rem 0;
+            border-bottom: var(--border-width) solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-visual {
+            height: 500px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--primary),
+                var(--primary) 2px,
+                transparent 2px,
+                transparent 10px
+            );
+            border: var(--border-width) solid var(--primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual::before {
+            content: "BUSAN";
+            position: absolute;
+            font-family: var(--font-main);
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--secondary);
+            border: var(--border-width) solid var(--primary);
+            padding: 1rem;
+            box-shadow: 10px 10px 0px var(--accent);
+            font-weight: bold;
+        }
+
+        .fc-1 { top: 10%; left: -20px; transform: rotate(5deg); }
+        .fc-2 { bottom: 20%; right: -20px; transform: rotate(-5deg); background: var(--accent); color: var(--primary); }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 6rem 0;
+            border-bottom: var(--border-width) solid var(--primary);
+        }
+
+        /* --- INTRO / CONTENT --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        .col-span-8 { grid-column: span 8; }
+        .col-span-4 { grid-column: span 4; }
+        
+        @media(max-width: 1024px) {
+            .col-span-8, .col-span-4 { grid-column: span 12; }
+        }
+
+        .marquee-container {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 1rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: var(--border-width) solid var(--secondary);
+            border-bottom: var(--border-width) solid var(--secondary);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            font-family: var(--font-main);
+            font-size: 2rem;
+        }
+
+        .marquee-item {
+            margin-right: 4rem;
+            text-transform: uppercase;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- SERVICES --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0; /* Brutalist gap */
+        }
+
+        .service-card {
+            border: var(--border-width) solid var(--primary);
+            padding: 3rem;
+            background: var(--secondary);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .service-card:hover {
+            background: var(--accent);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        /* --- REVIEWS (UGC) --- */
+        .reviews-wrapper {
+            display: flex;
+            gap: 48px;
+            overflow-x: auto;
+            padding-bottom: 2rem;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .reviews-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            min-width: 350px;
+            border: var(--border-width) solid var(--primary);
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.2);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 2px dashed var(--primary);
+            padding-bottom: 1rem;
+        }
+
+        .stars { color: var(--accent); font-size: 1.5rem; }
+        .user-nick { font-weight: bold; font-family: var(--font-main); }
+        .review-date { font-size: 0.9rem; opacity: 0.7; }
+
+        /* --- CTA --- */
+        .cta-section {
+            background: var(--accent);
+            color: var(--secondary);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .cta-box {
+            border: 4px solid var(--secondary);
+            padding: 4rem;
+            display: inline-block;
+            background: var(--primary);
+            transform: rotate(1deg);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 4rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-family: var(--font-body);
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .hero-content { grid-template-columns: 1fr; }
+            .hero-visual { height: 300px; order: -1; }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--secondary);
+                border-bottom: var(--border-width) solid var(--primary);
+                padding: 2rem;
+                display: none;
+                flex-direction: column;
+                gap: 1.5rem;
+                z-index: 999;
+            }
+
+            .mobile-menu.active { display: flex; }
+            
+            .mobile-toggle { display: block; }
+            .desktop-menu { display: none; }
+            
+            .cta-box { padding: 2rem; width: 90%; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+
+    <!-- HEADER -->
     <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>비주류 문화 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>비주류 문화</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>1960년대 한국 영화 손글씨 포스터 서체(Typography)의 시각 디자인적 보존 가치</h3>
-          <p>디지털 폰트가 전무하던 격변의 1960년대 한국 극장가를 상징하는 극영화 손그림 포스터와 당시 간판 화가들의 붓끝에서 창조된 특유의 볼드한 고딕 타이포그래피 서체들은 당대 시대적 ...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>전통 악기 장인들의 보존 노하우: 해금 실크 현(Silk String)의 천연 비왁스 코팅 기법</h3>
-          <p>한국 전통 찰현악기인 해금의 뽕나무 현에 가해지는 마찰력을 극대화하고 온도 및 습도 편차에 따르는 실크 현의 수축 팽창을 방어하기 위해 벌꿀에서 추출한 밀랍 왁스와 천연 벌꿀을 엄...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>활판 인쇄술의 숨겨진 보석: 19세기 납 활자(Lead Type) 캐스팅 자형 조각 기술</h3>
-          <p>활자를 한 자 한 자 구리 틀에 부어 굳히던 19세기 활판 금속 활자 조각술은 잉크가 젖은 종이 속으로 압착되어 들어갈 때 생기는 특유의 깊은 양각 엠보싱 텍스처와 미세하게 무너지...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>아날로그 문화 컬렉터들이 선정한 강남 셔츠룸 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>아날로그 문화 컬렉터들이 선정한 강남 셔츠룸 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
+        <div class="container nav-wrapper">
+            <div class="logo">BUSAN<br>COMMERCE</div>
+            <nav class="desktop-menu">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact" style="color: var(--accent);">Contact</a>
+            </nav>
+            <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#services" onclick="toggleMenu()">Services</a>
+            <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>부산 쇼핑몰 제작<br><span class="text-accent">마케팅</span>은<br>본능이다.</h1>
+                    <p style="font-size: 1.2rem; margin-top: 2rem;">
+                        예쁜 사이트? 그건 예술가에게 맡겨.<br>
+                        우리는 <strong>파는 사이트</strong>를 만든다.<br>
+                        부산에서 시작해 전 세계를 공략하는 거친 쇼핑몰 빌딩을 원한다면, 전화해라.
+                    </p>
+                    <a href="tel:01062790862" class="btn">지금 전화하기 (010-6279-0862)</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card fc-1">SEO 최적화</div>
+                    <div class="floating-card fc-2">전환율 300%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-item">/// 부산 쇼핑몰 제작</span>
+                <span class="marquee-item">/// 깔롱 마케팅</span>
+                <span class="marquee-item">/// 네이버 스마트스토어</span>
+                <span class="marquee-item">/// 쿠팡 입점</span>
+                <span class="marquee-item">/// 판매량 폭증</span>
+                <span class="marquee-item">/// 부산 쇼핑몰 제작</span>
+                <span class="marquee-item">/// 깔롱 마케팅</span>
+                <span class="marquee-item">/// 네이버 스마트스토어</span>
+                <span class="marquee-item">/// 쿠팡 입점</span>
+                <span class="marquee-item">/// 판매량 폭증</span>
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <section id="about">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="col-span-8">
+                        <h2>왜 우리는 <span class="bg-accent" style="padding: 0 10px;">이렇게</span> 만들까?</h2>
+                        <p>
+                            솔직히 말해서, 대부분의 쇼핑몰 사이트는 지루해. 같은 템플릿, 같은 레이아웃, 그리고 아무도 읽지 않는 길고 지루한 소개글.<br><br>
+                            하지만 사용자는 달라. 그들은 스크롤을 내리는 동안 3 초 안에 결정을 내려. <strong>'여기서 사야겠다' 혹은 '빠져나갈래'</strong>.<br><br>
+                            우리는 이 3 초를 위해 선을 긋고, 색을 칠하고, 글자를 배치해. 부산 쇼핑몰 제작 마케팅 전략은 화려한 효과가 아니라, <strong>심리적 압박감</strong>에서 시작된다. 우리는 당신의 상품을 더 거칠고, 더 매력적으로 보이게 만들 거야.
+                        </p>
+                    </div>
+                    <div class="col-span-4" style="background: var(--primary); color: var(--secondary); padding: 2rem; border: 4px solid var(--accent);">
+                        <h3 style="color: var(--accent);">OUR PHILOSOPHY</h3>
+                        <ul style="list-style: square; padding-left: 20px; margin-top: 1rem;">
+                            <li style="margin-bottom: 1rem;">No Bullshit Design</li>
+                            <li style="margin-bottom: 1rem;">Aggressive Copywriting</li>
+                            <li style="margin-bottom: 1rem;">Hardcore SEO</li>
+                            <li>Result-Oriented Only</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" style="background: var(--secondary);">
+            <div class="container">
+                <h2 style="text-align: center;">우리가 하는 일<br>(Just Do It)</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>01. 쇼핑몰 구축</h3>
+                        <p>스마트스토어, 자사몰, 쿠팡. 플랫폼에 구애받지 않는 커스터마이징. 로딩 속도 최적화는 기본 중의 기본.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>02. 브랜드 브루탈리즘</h3>
+                        <p>남들과 다른 비주얼. 눈길을 끄는 썸네일과 상세페이지로 스크롤을 멈추게 만든다.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>03. 깔롱 & 키워드</h3>
+                        <p>부산 지역 기반의 강력한 키워드 선점. 검색하면 우리 상점이 먼저 뜨게 만드는 작업.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>04. 전환율 최적화</h3>
+                        <p>방문자를 구매자로 바꾸는 심리학적 배치. 장바구니 담기 버튼을 누를 수밖에 없게 만든다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UGC REVIEWS -->
+        <section id="reviews">
+            <div class="container">
+                <h2>Real Talk<br><span class="text-accent">고객들의 소리</span></h2>
+                <div class="reviews-wrapper">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="user-nick">부산_옷가게_사장님</span>
+                            <span class="review-date">2023.10.12</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <p style="margin-top: 1rem;">"처엔 디자인이 너무 과하다 싶었는데, 오픈하자마자 문의 폭주함. 확실히 눈에 띄는 게 다르네. 매출 2 배 찍음."</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="user-nick">해운대_액세서리</span>
+                            <span class="review-date">2023.11.05</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <p style="margin-top: 1rem;">"마케팅 용어 몰라도 친절하게 설명해주심. '깔롱'이 뭔지 처음 알았는데 효과
 </body>
 </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <title>블로그 | 부산 쇼핑몰 제작 마케팅</title>
+    <meta name="description" content="부산 쇼핑몰 제작 마케팅 전문업체입니다. 정보를 공유하며 함께 성장하는 블로그입니다. 전화: 010-6279-0862">
+    <meta name="keywords" content="부산 쇼핑몰 제작, 마케팅, kr-pbn-bp-030, 쇼핑몰 운영 팁, SNS 마케팅">
+    <link rel="canonical" href="https://kr-pbn-bp-030.pages.dev/blog">
+    <meta property="og:title" content="부산 쇼핑몰 제작 마케팅 | 블로그">
+    <meta property="og:description" content="부산 쇼핑몰 제작 마케팅 전문업체입니다. 정보를 공유하며 함께 성장하는 블로그입니다. 전화: 010-6279-0862">
+    <meta property="og:url" content="https://kr-pbn-bp-030.pages.dev/blog">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --accent-color: #ccff00;
+            --border-color: #333;
+            --secondary-text: #888;
+            --font-main: 'Archivo Black', 'Helvetica Neue', sans-serif;
+            --font-body: 'Pretendard', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            border: 10px solid var(--text-color);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 2px solid var(--border-color);
+            padding: 0;
+        }
+
+        .header {
+            border-bottom: 2px solid var(--border-color);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border-color: var(--accent-color);
+        }
+
+        .main {
+            padding: 40px 20px;
+        }
+
+        .blog-post {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 40px;
+            background: #111;
+        }
+
+        .blog-meta {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .blog-title {
+            font-family: var(--font-main);
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content h2 {
+            font-family: var(--font-main);
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .blog-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+
+        .cta-box {
+            margin-top: 50px;
+            border: 2px dashed var(--accent-color);
+            padding: 30px;
+            text-align: center;
+            background: rgba(204, 255, 0, 0.05);
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .tel-link {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 15px 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .tel-link:hover {
+            background-color: var(--accent-color);
+        }
+
+        .footer {
+            border-top: 2px solid var(--border-color);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                border-width: 5px;
+                padding: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .blog-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-post {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo">KR-PBN-BP-030</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/services">서비스</a></li>
+                    <li><a href="/portfolio">포트폴리오</a></li>
+                    <li><a href="/blog" class="active">블로그</a></li>
+                    <li><a href="/contact">문의하기</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <article class="blog-post">
+                <div class="blog-meta">
+                    <span>카테고리: 쇼핑몰 운영 인사이트</span> | <span>작성일: 2024. 05. 21</span>
+                </div>
+                <h1 class="blog-title">부산에서 쇼핑몰 떴다? 그냥运 (운) 아님, '전략'임.</h1>
+                
+                <div class="blog-content">
+                    <p>안녕하세요. 부산에서 쇼핑몰 제작과 마케팅을 도와드리고 있는 kr-pbn-bp-030 입니다.</p>
+                    
+                    <p>요즘 카페에서 커피 마시다가 옆 테이블 대화가 들리더라고요. "야, 너 그 쇼핑몰 했잖아. 요즘 잘 나가?", "에이, 뭐... 그냥 운이 좀 따라준 거지."</p>
+                    
+                    <p>웃으면서 넘기겠지만, 솔직히 말해볼까요? <strong>쇼핑몰에서 '운'이 따라주는 경우는 1% 도 안 됩니다.</strong> 나머지 99% 는 다 '전략'이고 '데이터'고 '타이밍'이에요.</p>
+
+                    <h2>1. 부산 로컬, 그냥 넘기지 마세요</h2>
+                    <p>부산은 독특합니다. 서울이랑은 좀 달라요. 발품 파는 게 장땡인 경우도 있고, 지역 커뮤니티의 힘이 엄청 쎄기도 하죠. '부산 쇼핑몰 제작' 키워드로 검색해서 들어오는 분들에게 우리는 이렇게 말합니다.</p>
+                    <ul>
+                        <li><strong>노출 전략:</strong> 블로그나 인스타그램에 부산 지역 해시태그 (#부산맛집, #부산패션 등) 를 무작정 찍어넣지 말고, 타겟 고객이 실제로 검색할 만한 'Long-tail Keyword' 를 잡으세요.</li>
+                        <li><strong>신뢰도:</strong> 화려한 배너보다 "실제 부산 어디에 있다"는 주소와 전화번호, 그리고 대표님의 진정성 있는 얼굴이 더 잘 팔립니다.</li>
+                    </ul>
+
+                    <h2>2. 제작은 시작일 뿐, 마케팅이 본체입니다</h2>
+                    <p>예쁜 쇼핑몰 만드셨나요? 축하드립니다. 근데 그게 끝이 아니에요. 오프라인으로 치면 '간판 달고 문 연 상태'인 거죠. 손님이 올 리가 없잖아요?</p>
+                    <p>우리가 '부산 쇼핑몰 제작 마케팅'을 강조하는 이유가 바로 이겁니다. 사이트가 만들어지는 순간부터 SEO(검색엔진최적화) 세팅, SNS 연동, 그리고 초기 트래픽 유입 전략까지 같이 가야 합니다. 혼자 하려고 하면 지칩니다. 진짜로.</p>
+
+                    <h2>3. 실패해도 OK, 하지만 '똑같은' 실패는 NO</h2>
+                    <p>시도해 보고 안 되면 어떡하냐고요? 그건 데이터가 쌓이는 과정입니다. A 광고는 안 됐는데, B 콘텐츠는 조회수가 빵빵 터졌다면? 그게 바로 다음 성공의 열쇠입니다. 이걸 분석하고 다음 판을 짤 줄 아는 게 '마케팅'이에요.</p>
+                    
+                    <p>혼자 고민하다가 시간만 보내시지 마세요. 부산에서 함께 호흡할 파트너가 필요하시다면, 언제든 편하게 연락 주세요. 커피 한 잔 사드리겠습니다. (진심임)</p>
+                </div>
+
+                <div class="cta-box">
+                    <h3>내 쇼핑몰, 어떻게 시작할지 막막하신가요?</h3>
+                    <p>단순 제작을 넘어, 팔리는 구조를 만들어 드립니다.</p>
+                    <a href="tel:01062790862" class="tel-link">010-6279-0862 로 전화하기</a>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 kr-pbn-bp-030. All rights reserved.</p>
+            <p>부산 쇼핑몰 제작 마케팅 전문 | 대표전화: 010-6279-0862</p>
+            <p style="margin-top:10px; font-size: 0.8rem; color: #555;">Business License: 000-00-00000 | Hosted by Pages.dev</p>
+        </footer>
+    </div>
+
+</body>
+</html>
