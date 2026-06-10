@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title><![CDATA[부산 부산 쇼핑몰 제작 마케팅]]></title>
-  <link>https://kr-pbn-bp-030.pages.dev</link>
-  <description><![CDATA[부산 쇼핑몰 제작 관련 최신 뉴스, 서비스 안내, 리얼 후기 정보를 신속하게 전달하는 공식 RSS 피드입니다.]]></description>
-  <language>ko-KR</language>
-  <pubDate>Thu, 28 May 2026 17:35:46 GMT</pubDate>
-  <lastBuildDate>Thu, 28 May 2026 17:35:46 GMT</lastBuildDate>
-  <atom:link href="https://kr-pbn-bp-030.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
+  <title><![CDATA[쇼핑몰 제작]]></title>
+  <link>https://tidalhss-star.github.io/bp-kr-pbn-bp-030</link>
+  <description><![CDATA[쇼핑몰 제작 - 부산 쇼핑몰 제작 마케팅 관련 최신 소식 및 가이드]]></description>
+  <language>ko</language>
+  <pubDate>Wed, 10 Jun 2026 00:06:08 GMT</pubDate>
+  <lastBuildDate>Wed, 10 Jun 2026 00:06:08 GMT</lastBuildDate>
+  <atom:link href="https://tidalhss-star.github.io/bp-kr-pbn-bp-030/feed.xml" rel="self" type="application/rss+xml" />
   
     <item>
-      <title><![CDATA[부산 부산 쇼핑몰 제작 마케팅 - 공식 홈페이지 오픈 안내]]></title>
-      <link>https://kr-pbn-bp-030.pages.dev/</link>
-      <guid isPermaLink="true">https://kr-pbn-bp-030.pages.dev/</guid>
-      <description><![CDATA[부산 쇼핑몰 제작 관련 최신 뉴스, 서비스 안내, 리얼 후기 정보를 신속하게 전달하는 공식 RSS 피드입니다.]]></description>
-      <pubDate>Thu, 28 May 2026 17:35:46 GMT</pubDate>
+      <title><![CDATA[부산 쇼핑몰 제작 마케팅 경험자에게 물어본 현실적인 판단 기준]]></title>
+      <link>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/interview-002-osrs1p.html</link>
+      <guid isPermaLink="true">https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/interview-002-osrs1p.html</guid>
+      <description><![CDATA[## 제목: 창작한 제목"NIKE AFOSS LOGO CHANGES ON 2023 OG ZEL KAYANO - INTERNAL EVIDENCE REVEAL" ### 소제목1. 내부 유출 루트로 입수된 미발매 컬러웨이의 로고 프린트 변화에 대한 현장 대화 한 줄 인용과 ]]></description>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[부산 쇼핑몰 제작 마케팅에 관한 흔한 오해, 직접 확인해보니 달랐던 점]]></title>
+      <link>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/myth-001-osrs1p.html</link>
+      <guid isPermaLink="true">https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/myth-001-osrs1p.html</guid>
+      <description><![CDATA[### 포스트 DNA 52d6551e제목: 창작한 제목: "엘든링 데이터 마이닝: 미사용 보스의 패턴과 그 함정, 스킵 글리치를 위한 전략" 관점: 스피드러너의 시점에서 특정 패치로 막힌 스킵 글리치 조건을 중심으로 서사를 전개합니다. #### 소제목 1## 미사용 보]]></description>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
     </item>
 </channel>
 </rss>
