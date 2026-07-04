@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://busan-web-marketing.namanavi.com/</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/field_note-002-a4oore.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://busan-web-marketing.namanavi.com/about.html</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/interview-002-osrs1p.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://busan-web-marketing.namanavi.com/blog.html</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/myth-001-osrs1p.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/posts/review-001-a4oore.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://tidalhss-star.github.io/bp-kr-pbn-bp-030/feed.xml</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
