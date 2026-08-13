@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · kr-pbn-bp-030</title>
+  <meta name="description" content="kr-pbn-bp-030에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://busan-web-marketing.namanavi.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* --- RESET & BASE --- */
+ :root {
+ --color-bg: #050505;
+ --color-text: #e0e0e0;
+ --color-accent: #ccff00; /* Neon Lime */
+ --color-accent-hover: #b3e600;
+ --color-border: #333;
+ --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+ --font-display: 'Oswald', 'Impact', sans-serif;
+ --spacing-unit: 1rem;
+ --border-width: 2px;
+ }
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body {
+ background-color: var(--color-bg);
+ color: var(--color-text);
+ font-family: var(--font-main);
+ line-height: 1.6;
+ font-size: 16px;
+ overflow-x: hidden;
+ border-top: 4px solid var(--color-accent);
+ }
+ a { text-decoration: none; color: inherit; transition: 0.2s; }
+ ul { list-style: none; }
+ img { max-width: 100%; display: block; }
+
+ /* --- TYPOGRAPHY --- */
+ h1, h2, h3, h4 {
+ font-family: var(--font-display);
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ line-height: 1.1;
+ }
+ h1 { font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 1rem; color: #fff; }
+ h2 { font-size: clamp(1.8rem, 3vw, 3rem); margin-bottom: 1.5rem; border-left: 4px solid var(--color-accent); padding-left: 1rem; }
+ h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+ p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #aaa; }
+ .text-accent { color: var(--color-accent); }
+ .bg-accent { background-color: var(--color-accent); color: #000; }
+
+ /* --- UTILITIES --- */
+ .container {
+ width: 90%;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 var(--spacing-unit);
+ }
+ .section { padding: 4rem 0; border-bottom: 1px solid var(--color-border); }
+ .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+ .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+ /* --- COMPONENTS --- */
+ .btn {
+ display: inline-block;
+ background: transparent;
+ color: var(--color-accent);
+ border: 2px solid var(--color-accent);
+ padding: 1rem 2rem;
+ font-family: var(--font-display);
+ font-weight: 700;
+ text-transform: uppercase;
+ cursor: pointer;
+ font-size: 1.1rem;
+ transition: all 0.2s ease;
+ }
+ .btn:hover {
+ background: var(--color-accent);
+ color: #000;
+ transform: translate(-4px, -4px);
+ box-shadow: 4px 4px 0px #fff;
+ }
+ .btn:active {
+ transform: translate(0, 0);
+ box-shadow: none;
+ }
+
+ .card {
+ border: 2px solid var(--color-border);
+ padding: 2rem;
+ background: #0a0a0a;
+ transition: 0.3s;
+ }
+ .card:hover {
+ border-color: var(--color-accent);
+ background: #111;
+ }
+ .card h3 { color: var(--color-accent); }
+
+ /* --- NAVIGATION --- */
+ header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(5, 5, 5, 0.95);
+ backdrop-filter: blur(5px);
+ border-bottom: 1px solid var(--color-border);
+ z-index: 1000;
+ padding: 1rem 0;
+ }
+ .nav-wrapper {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo {
+ font-family: var(--font-display);
+ font-size: 1.5rem;
+ font-weight: 900;
+ color: #fff;
+ letter-spacing: -1px;
+ }
+ .logo span { color: var(--color-accent); }
+ 
+ .desktop-nav ul { display: flex; gap: 2rem; }
+ .desktop-nav a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+ .desktop-nav a:hover { color: var(--color-accent); text-decoration: underline; }
+
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ width: 30px;
+ }
+ .hamburger span {
+ height: 3px;
+ background: #fff;
+ width: 100%;
+ }
+ .mobile-menu {
+ position: fixed;
+ top: 60px;
+ left: 0;
+ width: 100%;
+ background: #000;
+ border-bottom: 2px solid var(--color-accent);
+ padding: 2rem;
+ transform: translateY(-150%);
+ transition: transform 0.3s ease-in-out;
+ z-index: 999;
+ }
+ .mobile-menu.active { transform: translateY(0); }
+ .mobile-menu ul { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
+ .mobile-menu a { font-size: 1.5rem; font-family: var(--font-display); text-transform: uppercase; }
+
+ /* --- RESPONSIVE --- */
+ @media (max-width: 768px) {
+ .desktop-nav { display: none; }
+ .hamburger { display: flex; }
+ .grid-2, .grid-3 { grid-template-columns: 1fr; }
+ h1 { font-size: 2.5rem; }
+ h2 { font-size: 2rem; }
+ }
+
+ /* --- FAQ ACCORDION --- */
+ details {
+ border: 1px solid var(--color-border);
+ margin-bottom: 1rem;
+ background: #0a0a0a;
+ }
+ summary {
+ padding: 1.5rem;
+ cursor: pointer;
+ font-weight: 700;
+ list-style: none;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-family: var(--font-display);
+ text-transform: uppercase;
+ }
+ summary::after { content: '+'; font-size: 1.5rem; color: var(--color-accent); }
+ details[open] summary::after { content: '-'; }
+ .faq-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #ccc; border-top: 1px solid var(--color-border); margin-top: -1px; }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · kr-pbn-bp-030">
+  <meta property="og:description" content="kr-pbn-bp-030에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://busan-web-marketing.namanavi.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container nav-wrapper">
+ <a href="#" class="logo">BUSAN<span>부산 쇼핑몰 제작 안내</span></a>
+ 
+ <nav class="desktop-nav">
+ <ul>
+ <li><a href="#about">우리는 누구인가</a></li>
+ <li><a href="#process">작동 원리</a></li>
+ <li><a href="#faq">자주 묻는 질문</a></li>
+ 
+ </ul>
+ </nav>
+
+ <div class="hamburger" onclick="toggleMenu()">
+ 
+ 
+ 
+ </div>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 31개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1146.html">부산 쇼핑몰 제작 시 화려한 디자인을 당장 버려야 하는 이유</a>
+        <p class="post-item__summary">남들은 쇼핑몰을 만들 때 세련된 디자인과 세세한 기능부터 채워야 한다고 입을 모은다. 그래야 소비자의 신뢰를 얻고 대기업 웹사이트처럼 보인다는 그럴싸한 핑계를 댄다. 하지만 장담컨대 초기 자본이 넉</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0121.html">부산 쇼핑몰 제작 마케팅 성공을 위한 동대문 풋쌤 매장 방문기</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 업무를 추진하다 보면 하루 종일 모니터를 보느라 어깨와 다리가 굳어지기 마련입니다. 최근 동대문 근처에서 업무를 마치고 피로를 풀기 위해 마사지 샵을 찾던 중, 체계적인 관</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0122.html">부산 쇼핑몰 제작 마케팅 효율을 높이는 합정 인디 라운지 모임</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 프로젝트를 진행하다 보면 으레 사람들은 대규모 네트워킹 파티가 성공의 열쇠라고 생각합니다. 하지만 실제 성과는 소수의 인원이 깊이 있게 교류하는 프라이빗한 공간에서 더 자주</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0123.html">부산 쇼핑몰 제작 마케팅 기반을 다지는 백링크 주스 공급 서비스</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅의 성패는 검색 엔진의 신뢰를 얼마나 효율적으로 확보하느냐에 달려 있습니다. 이를 위해서는 콘텐츠의 질을 뒷받침하는 안정적인 연결 고리가 필요합니다. 흔히 말하는 백링크 주스</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0124.html">부산 쇼핑몰 제작 마케팅 자동화의 핵심 에이전트 루프 코딩 스쿨</a>
+        <p class="post-item__summary">여러분은 현재 부산 쇼핑몰 제작 마케팅 업무를 사람이 직접 하나하나 수행하고 계십니까? 반복되는 업무를 기계적으로 처리하는 시대는 이미 지나갔으며, 이제는 자동화 도구를 적절히 활용하여 효율을 극대</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0125.html">부산 쇼핑몰 제작 마케팅 성공을 위한 마포 럭셔리 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">디지털 환경에서의 비즈니스 성공이 부산 쇼핑몰 제작 마케팅 전략에 달려 있듯, 오프라인 모임의 성공은 철저한 준비 과정에서 시작됩니다. 특히 대규모 인원이 참석하는 VIP 모임은 장소 선정부터 분위</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0126.html">부산 쇼핑몰 제작 마케팅 활용한 도메인 지수 탈모 방지 및 앵커 텍스트 이식 가이드</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 효율을 높이려면 구조적인 접근이 필요하듯, 온라인 가시성을 확보하는 과정 역시 논리적 판단을 요합니다. 웹사이트의 권위를 높이는 작업과 서비스 성장을 도모하는 작업 사이에서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0127.html">부산 쇼핑몰 제작 마케팅 기반 마포 셔츠룸 예약 시 눈탱이 피하는 법 공개</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 과정에서 신뢰가 기반이 되어야 하듯, 오프라인 서비스 이용 시에도 예약자와 공급자 사이의 투명한 소통은 매우 중요합니다. 많은 이용자가 흔히 실패하는 지점은 불분명한 가격 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0128.html">부산 쇼핑몰 제작 마케팅 노하우로 확인하는 셔츠룸 예약 셔츠룸 가이드</a>
+        <p class="post-item__summary">성공적인 부산 쇼핑몰 제작 마케팅 전략이 타깃 고객의 동선을 파악하는 데서 시작되듯, 효율적인 예약을 위해서는 현장의 지리적 특성을 파악하는 것이 우선입니다. 셔츠룸 예약을 고려할 때 이동 시간을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0129.html">부산 쇼핑몰 제작 마케팅 활용한 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">특정 전자상거래 솔루션 구축 이후 예상치 못한 트래픽 유입으로 고민하던 사업자가 있었습니다. 단순히 상품을 판매하는 창구로만 여겼던 플랫폼이 예상외로 금융 정보 검색 결과의 상단에 노출되면서 새로운</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0130.html">부산 쇼핑몰 제작 마케팅 연계 구글 알고리즘 고신용 도메인 보증 카드 발급</a>
+        <p class="post-item__summary">많은 이들이 웹사이트 운영 기간만 길면 구글 검색 결과에서 무조건 상단에 노출될 것이라 오해합니다. 도메인의 실제 가치는 단순히 시간의 흐름이 아니라, 축적된 신뢰도와 사용자 상호작용의 질에 의해 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0131.html">부산 쇼핑몰 제작 마케팅 성공 사례의 마포 단체 회식용 대형 룸 노래방 가격 정보</a>
+        <p class="post-item__summary">단체 회식을 계획할 때 가장 먼저 고려해야 할 요소는 인원 수용 능력과 청결도입니다. 넓은 공간을 확보하면서도 프라이버시가 보장되는 환경은 업무의 연장선인 회식 자리에서 가장 우선순위로 꼽힙니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0132.html">부산 쇼핑몰 제작 마케팅 가이드로 본 마포 유흥 투명 정찰제 가격 정보 디렉토리</a>
+        <p class="post-item__summary">비용 문제로 인해 고민해 본 적이 있으신가요? 많은 이들이 업체를 선택할 때 가격 정보가 불투명하여 막연한 불안감을 느끼곤 합니다. 부산 쇼핑몰 제작 마케팅에서 강조하는 고객 신뢰 확보의 핵심은 바</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0133.html">부산 쇼핑몰 제작 마케팅 성공을 위한 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드 전략</a>
+        <p class="post-item__summary">디지털 환경에서 브랜드의 성장을 도모하기 위해 부산 쇼핑몰 제작 마케팅 방식을 차용하는 것은 매우 합리적인 선택입니다. 특히 서비스의 질을 객관적으로 입증해야 하는 업종에서는 타겟 고객의 페르소나를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0134.html">부산 쇼핑몰 제작 마케팅 기준의 구글 신뢰 지수 모발이식 솔루션 분석</a>
+        <p class="post-item__summary">온라인 사업을 운영하며 부산 쇼핑몰 제작 마케팅 전략을 고민할 때, 검색 엔진의 신뢰를 얻는 것은 필수적인 과제입니다. 특히 도메인 파워를 증폭시키기 위해서는 기술적인 측면과 콘텐츠의 질적 측면을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0135.html">부산 쇼핑몰 제작 마케팅 기반 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅을 진행하면서 많은 관리자가 인덱싱의 지연으로 어려움을 겪습니다. 인덱싱이 원활하지 않으면 아무리 훌륭한 콘텐츠를 제작해도 검색 결과에 노출되지 않기 때문입니다. 흔히 범하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0177.html">부산 쇼핑몰 제작 마케팅 성공 전략과 연남 클럽 추천정보 탐방기</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 분야에서 디지털 전략이 중요하듯, 연남동의 밤을 즐기는 방식에도 치밀한 준비가 필요합니다. 처음 연남동을 방문하는 이들은 분위기에 휩쓸려 계획 없이 이동하는 경우가 많습니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0178.html">부산 쇼핑몰 제작 마케팅 효율적 분석과 합정 셔츠룸 추천정보</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅에서 데이터의 왜곡이 큰 문제를 일으키듯, 합정의 유흥 문화에 대해서도 근거 없는 편견이 많습니다. 흔히 셔츠룸이 단순히 폐쇄적인 환경이라고 생각하기 쉽지만, 실제로는 정해진</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0179.html">부산 쇼핑몰 제작 마케팅과 공덕 가라오케 추천정보 인원 구성 팁</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅을 성공시키기 위해 방문객의 유입 경로를 파악해야 하듯, 가라오케를 예약할 때는 인원 구성을 가장 먼저 고려해야 합니다. 넓은 룸을 확보하기 위한 최적의 인원 수와 대화의 흐</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0180.html">부산 쇼핑몰 제작 마케팅으로 본 상수 마사지 추천정보 업체 기준</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 사례에서 볼 수 있듯, 온라인상의 넘치는 정보 중 어떤 것이 진짜인지 구분해 본 적 있으신가요? 여러분이 상수동에서 만족스러운 마사지 업체를 찾으려 할 때, 가장 신뢰할 만</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

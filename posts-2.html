@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · kr-pbn-bp-030</title>
+  <meta name="description" content="kr-pbn-bp-030에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://busan-web-marketing.namanavi.com/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* --- RESET & BASE --- */
+ :root {
+ --color-bg: #050505;
+ --color-text: #e0e0e0;
+ --color-accent: #ccff00; /* Neon Lime */
+ --color-accent-hover: #b3e600;
+ --color-border: #333;
+ --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+ --font-display: 'Oswald', 'Impact', sans-serif;
+ --spacing-unit: 1rem;
+ --border-width: 2px;
+ }
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body {
+ background-color: var(--color-bg);
+ color: var(--color-text);
+ font-family: var(--font-main);
+ line-height: 1.6;
+ font-size: 16px;
+ overflow-x: hidden;
+ border-top: 4px solid var(--color-accent);
+ }
+ a { text-decoration: none; color: inherit; transition: 0.2s; }
+ ul { list-style: none; }
+ img { max-width: 100%; display: block; }
+
+ /* --- TYPOGRAPHY --- */
+ h1, h2, h3, h4 {
+ font-family: var(--font-display);
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ line-height: 1.1;
+ }
+ h1 { font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 1rem; color: #fff; }
+ h2 { font-size: clamp(1.8rem, 3vw, 3rem); margin-bottom: 1.5rem; border-left: 4px solid var(--color-accent); padding-left: 1rem; }
+ h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+ p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #aaa; }
+ .text-accent { color: var(--color-accent); }
+ .bg-accent { background-color: var(--color-accent); color: #000; }
+
+ /* --- UTILITIES --- */
+ .container {
+ width: 90%;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 var(--spacing-unit);
+ }
+ .section { padding: 4rem 0; border-bottom: 1px solid var(--color-border); }
+ .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+ .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+ /* --- COMPONENTS --- */
+ .btn {
+ display: inline-block;
+ background: transparent;
+ color: var(--color-accent);
+ border: 2px solid var(--color-accent);
+ padding: 1rem 2rem;
+ font-family: var(--font-display);
+ font-weight: 700;
+ text-transform: uppercase;
+ cursor: pointer;
+ font-size: 1.1rem;
+ transition: all 0.2s ease;
+ }
+ .btn:hover {
+ background: var(--color-accent);
+ color: #000;
+ transform: translate(-4px, -4px);
+ box-shadow: 4px 4px 0px #fff;
+ }
+ .btn:active {
+ transform: translate(0, 0);
+ box-shadow: none;
+ }
+
+ .card {
+ border: 2px solid var(--color-border);
+ padding: 2rem;
+ background: #0a0a0a;
+ transition: 0.3s;
+ }
+ .card:hover {
+ border-color: var(--color-accent);
+ background: #111;
+ }
+ .card h3 { color: var(--color-accent); }
+
+ /* --- NAVIGATION --- */
+ header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(5, 5, 5, 0.95);
+ backdrop-filter: blur(5px);
+ border-bottom: 1px solid var(--color-border);
+ z-index: 1000;
+ padding: 1rem 0;
+ }
+ .nav-wrapper {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo {
+ font-family: var(--font-display);
+ font-size: 1.5rem;
+ font-weight: 900;
+ color: #fff;
+ letter-spacing: -1px;
+ }
+ .logo span { color: var(--color-accent); }
+ 
+ .desktop-nav ul { display: flex; gap: 2rem; }
+ .desktop-nav a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+ .desktop-nav a:hover { color: var(--color-accent); text-decoration: underline; }
+
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ width: 30px;
+ }
+ .hamburger span {
+ height: 3px;
+ background: #fff;
+ width: 100%;
+ }
+ .mobile-menu {
+ position: fixed;
+ top: 60px;
+ left: 0;
+ width: 100%;
+ background: #000;
+ border-bottom: 2px solid var(--color-accent);
+ padding: 2rem;
+ transform: translateY(-150%);
+ transition: transform 0.3s ease-in-out;
+ z-index: 999;
+ }
+ .mobile-menu.active { transform: translateY(0); }
+ .mobile-menu ul { display: flex; flex-direction: column; gap: 1.5rem; text-align: center; }
+ .mobile-menu a { font-size: 1.5rem; font-family: var(--font-display); text-transform: uppercase; }
+
+ /* --- RESPONSIVE --- */
+ @media (max-width: 768px) {
+ .desktop-nav { display: none; }
+ .hamburger { display: flex; }
+ .grid-2, .grid-3 { grid-template-columns: 1fr; }
+ h1 { font-size: 2.5rem; }
+ h2 { font-size: 2rem; }
+ }
+
+ /* --- FAQ ACCORDION --- */
+ details {
+ border: 1px solid var(--color-border);
+ margin-bottom: 1rem;
+ background: #0a0a0a;
+ }
+ summary {
+ padding: 1.5rem;
+ cursor: pointer;
+ font-weight: 700;
+ list-style: none;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-family: var(--font-display);
+ text-transform: uppercase;
+ }
+ summary::after { content: '+'; font-size: 1.5rem; color: var(--color-accent); }
+ details[open] summary::after { content: '-'; }
+ .faq-content { padding: 0 1.5rem 1.5rem 1.5rem; color: #ccc; border-top: 1px solid var(--color-border); margin-top: -1px; }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · kr-pbn-bp-030">
+  <meta property="og:description" content="kr-pbn-bp-030에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://busan-web-marketing.namanavi.com/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container nav-wrapper">
+ <a href="#" class="logo">BUSAN<span>부산 쇼핑몰 제작 안내</span></a>
+ 
+ <nav class="desktop-nav">
+ <ul>
+ <li><a href="#about">우리는 누구인가</a></li>
+ <li><a href="#process">작동 원리</a></li>
+ <li><a href="#faq">자주 묻는 질문</a></li>
+ 
+ </ul>
+ </nav>
+
+ <div class="hamburger" onclick="toggleMenu()">
+ 
+ 
+ 
+ </div>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 31개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0181.html">부산 쇼핑몰 제작 마케팅 전문 업체가 알려주는 망원 노래방 추천정보 선택법</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 분야에서 전략을 수립하듯, 망원 지역에서 즐거운 시간을 보내기 위해 적절한 업소를 선정하는 과정도 체계적인 분석이 필요합니다. 온라인상에 넘쳐나는 정보들 속에서 나에게 딱 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0182.html">부산 쇼핑몰 제작 마케팅 노하우를 활용한 홍대 노래방 추천정보 가격 비교법</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 업계에서 단가 책정 방식을 분석하듯, 홍대 지역에서 유흥 시설을 선택할 때도 가격 구조를 명확히 이해해야 합니다. 소비자는 대개 화려한 인테리어를 갖춘 대형 업소와 실속을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0183.html">부산 쇼핑몰 제작 마케팅 관점에서 보는 공덕 셔츠룸 추천정보 예약 오류 해결</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 프로젝트를 진행할 때 고객 유입 경로를 제대로 파악하지 못하면 성과가 나지 않듯이, 공덕 셔츠룸 예약 또한 초기 단계의 정보 부족으로 큰 불편을 겪을 수 있습니다. 많은 방</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0184.html">부산 쇼핑몰 제작 마케팅 전문가가 제안하는 연남 유흥 추천정보 접근성 체크</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 업무를 통해 비즈니스의 지리적 위치가 고객 방문율에 미치는 영향을 데이터로 확인했듯, 연남 지역 유흥 업소 또한 위치와 접근성이 만족도를 크게 좌우합니다. 낯선 유흥가를 방</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0185.html">부산 쇼핑몰 제작 마케팅 성공 사례로 본 마곡 가라오케 추천정보 활용법</a>
+        <p class="post-item__summary">디지털 환경에서 부산 쇼핑몰 제작 마케팅 전략이 매출을 좌우하듯, 특정 지역의 유흥 업소를 선정하는 일에도 철저한 사전 분석이 필요합니다. 낯선 마곡 지역의 밤 문화를 처음 접하는 이들은 종종 잘못</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0186.html">부산 쇼핑몰 제작 마케팅 전문가가 알려주는 마곡 유흥 추천정보의 진실</a>
+        <p class="post-item__summary">흔히들 유흥 업소 정보는 무조건 숨겨야 하는 비밀스러운 영역이라고 오해하는 경우가 많습니다. 하지만 부산 쇼핑몰 제작 마케팅 분야에서 투명한 정보 공개가 성장을 이끌어내듯, 건전하고 정확한 마곡 유</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0187.html">부산 쇼핑몰 제작 마케팅 분석으로 본 합정 노래방 추천정보와 시설</a>
+        <p class="post-item__summary">깔끔한 시설, 최신 음향 시스템, 그리고 합리적인 가격이라는 세 가지 충족 조건이 갖춰진 곳을 찾는 것이 중요합니다. 부산 쇼핑몰 제작 마케팅 캠페인이 고객의 니즈를 정확히 파악하여 전환율을 높이듯</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0230.html">부산 쇼핑몰 제작 마케팅 비용과 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호 전략</a>
+        <p class="post-item__summary">부산 쇼핑몰 제작 마케팅 프로젝트를 진행할 때 비용 대비 효율을 고민하는 것은 당연한 수순입니다. 기업은 일회성 구축 비용을 지불하고 마케팅에 집중할지, 혹은 유지보수 체계에 예산을 배분하여 안정성</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0231.html">부산 쇼핑몰 제작 마케팅 실패 사례로 보는 셔츠룸 사이트 예약 주의사항</a>
+        <p class="post-item__summary">많은 사용자가 부산 쇼핑몰 제작 마케팅 사례에서 보듯 웹상의 정보만을 맹신하다가 낭패를 보곤 합니다. 특히 예약 시스템이 명확하지 않은 업체를 이용할 때 이러한 불상사가 자주 발생합니다. 예약 절차</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260731-0022.html">부산 쇼핑몰 제작 마케팅 – 온라인 비즈니스 확장을 위한 기초 안내</a>
+        <p class="post-item__summary">부산 지역에서 쇼핑몰을 새롭게 구축하거나 기존 온라인 판로를 넓히려는 사업자라면, 제작 단계부터 마케팅 전략을 함께 설계하는 것이 중요합니다. 쇼핑몰 제작은 단순히 상품을 나열하는 페이지를 만드는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260731-0046.html">부산 쇼핑몰 제작 마케팅 전략과 지역 분석</a>
+        <p class="post-item__summary">부산 지역에서 쇼핑몰을 제작하고 마케팅을 진행할 때는 지역적 특성과 타깃 고객층의 구매 행동을 면밀히 분석하는 작업이 필요합니다. 플랫폼 구축 시에는 웹사이트 디자인뿐만 아니라 검색엔진 최적화(SE</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
